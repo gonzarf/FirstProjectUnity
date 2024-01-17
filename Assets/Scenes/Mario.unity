@@ -324,7 +324,7 @@ GameObject:
   - component: {fileID: 961373236}
   - component: {fileID: 961373241}
   m_Layer: 0
-  m_Name: pngwing.com_0
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -342,8 +342,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e6101963283af24b8f5e110726a570c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rightKey: 275
-  leftKey: 276
+  rightKey: 100
+  leftKey: 97
   speed: 5
   stepSound: {fileID: 8300000, guid: 7a3406905f1b0cc4082b65c2e1acd100, type: 3}
 --- !u!61 &961373237
@@ -478,7 +478,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 961373235}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.37, y: -4.38, z: 9.9}
+  m_LocalPosition: {x: -16.3, y: -4.37, z: 9.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -519,7 +519,7 @@ GameObject:
   - component: {fileID: 1467365434}
   m_Layer: 0
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: suelo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -666,7 +666,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 149bdb6e722239a42a603bdc7abd1537, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -763,7 +763,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1980692014
 MonoBehaviour:

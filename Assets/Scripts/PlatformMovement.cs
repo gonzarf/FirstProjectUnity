@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -13,6 +14,7 @@ public class PlatformMovement : MonoBehaviour
     private Vector2 _dir;
     private SpriteRenderer _spriteRenderer;
     private Animator _animator;
+    private Boolean isJumping;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,12 +42,16 @@ public class PlatformMovement : MonoBehaviour
             _spriteRenderer.flipX = false;
         }
 
-        //IF de animaciones
+    // If salto 
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && !isJumping)
         {
-            _rb.AddForce(Vector2.up * 20, ForceMode2D.Impulse);
+            _rb.AddForce(Vector2.up * 40, ForceMode2D.Impulse);
+
+            isJumping = true;
         }
+
+      //IF de animaciones
 
         if(_dir != Vector2.zero)
         {
@@ -53,6 +59,14 @@ public class PlatformMovement : MonoBehaviour
         }else
         {
             _animator.SetBool("isWalking", false);
+        }
+    }
+
+    void OnCollisionEnter(Collision other)
+    {
+        if (_rb.velocity.y == 0)
+        {
+            isJumping = false;
         }
     }
 
