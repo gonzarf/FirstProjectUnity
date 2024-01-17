@@ -7,6 +7,7 @@ public class PlatformMovement : MonoBehaviour
 {
     public KeyCode rightKey, leftKey;
     public float speed;
+    public AudioClip stepSound;
 
     private Rigidbody2D _rb;
     private Vector2 _dir;
@@ -41,6 +42,11 @@ public class PlatformMovement : MonoBehaviour
 
         //IF de animaciones
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            _rb.AddForce(Vector2.up * 20, ForceMode2D.Impulse);
+        }
+
         if(_dir != Vector2.zero)
         {
             _animator.SetBool("isWalking", true);
@@ -50,8 +56,15 @@ public class PlatformMovement : MonoBehaviour
         }
     }
 
+    public void PlayStepSound()
+    {
+        AudioManager.instance.PlayAudio(stepSound, .5f);
+    }
+
     private void FixedUpdate()
     {
-        _rb.velocity = _dir * speed;
+        Vector2 nVel = _dir * speed;
+        nVel.y = _rb.velocity.y;
+        _rb.velocity = nVel;
     }
 }
